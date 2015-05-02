@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="ISS">
+
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+		<class>pl.tobo.ISS.entities.User</class>
+		<class>pl.tobo.ISS.entities.Role</class>
+		<class>pl.tobo.ISS.entities.Type</class>
+		<class>pl.tobo.ISS.entities.Content</class>
+		<class>pl.tobo.ISS.entities.Screen</class>
+		<class>pl.tobo.ISS.entities.Tag</class>
+		<properties>
+			<!-- validate | update | create | create-drop -->
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+
+			<property name="hibernate.show_sql" value="false" />
+
+			<property name="hibernate.connection.username" value="AUTOREPLACE_MYSQL_USERNAME" />
+			<property name="hibernate.connection.password" value="AUTOREPLACE_MYSQL_PASSWORD" />
+			<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
+			<property name="hibernate.connection.url"
+				value="jdbc:mysql://AUTOREPLACE_MYSQL_HOST:AUTOREPLACE_MYSQL_PORT/AUTOREPLACE_MYSQL_DATABASE_NAME?characterEncoding=utf8" />
+			<property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
+
+			<!-- C3P0 connection pool -->
+			<property name="hibernate.c3p0.timeout" value="600" />
+			<property name="hibernate.c3p0.maxIdleTimeExcessConnections"
+				value="20" />
+
+			<property name="hibernate.c3p0.validate" value="false" />
+			<property name="hibernate.c3p0.idle_test_period" value="30" />
+			<property name="hibernate.c3p0.automaticTestTable" value="conTestTable" />
+
+			<!-- Echo all executed SQL to stdout -->
+			<property name="show_sql" value="false" />
+
+		</properties>
+	</persistence-unit>
+</persistence>
+

@@ -1,0 +1,6 @@
+.show_image {
+	display: block;
+	max-height: 480px;
+	margin: 22px auto;
+	border: 1px dashed grey;
+}

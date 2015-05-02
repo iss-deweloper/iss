@@ -1,0 +1,65 @@
+html, body {
+	background-color: #fff;
+	color: #000;
+	margin: 0;
+	padding: 0;
+	font-size: 24px;
+}
+
+#header {
+	height: 48px;
+	background-color: #ccc;
+	text-align: center;
+}
+
+#nav {
+	background-color: #6495ed;
+	height: 48px;
+}
+
+button {
+	font-size: 18px;
+	color: #000;
+}
+
+#login {
+	margin-top: 10%;
+	display: block;
+}
+
+#message {
+	font-size: 18px;
+	color: red;
+	text-align: center;
+	margin: 30px;
+}
+
+#register {
+	text-align: right;
+	float: right;
+	margin: 30px;
+	text-decoration: none;
+}
+
+.description {
+	font-weight: bold;
+}
+
+form {
+	text-align: center;
+	width: 400px;
+	margin: 0 auto;
+}
+
+input {
+	width: 300px;
+	height: 45px;
+	font-size: 32px;
+	text-align: center;
+}
+
+input[type=submit] {
+	border-radius: 10px;
+	margin: 10px;
+	background-color: #6495ed;
+}
