@@ -3,6 +3,8 @@
 persistence.xml
 *.class
 
+*.class
+
 # Package Files #
 *.jar
 *.war
