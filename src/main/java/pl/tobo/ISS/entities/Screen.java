@@ -37,6 +37,10 @@ public class Screen {
 	@OrderBy("name")
 	private Set<Tag> tags;
 
+	
+	@Column(name="screenFormat")
+	private String format;
+	
 	public int getId() {
 		return id;
 	}
@@ -67,6 +71,20 @@ public class Screen {
 
 	public void setTags(Set<Tag> tags) {
 		this.tags = tags;
+	}
+
+	/**
+	 * @return the format
+	 */
+	public String getFormat() {
+		return format;
+	}
+
+	/**
+	 * @param format the format to set
+	 */
+	public void setFormat(String format) {
+		this.format = format;
 	}
 
 

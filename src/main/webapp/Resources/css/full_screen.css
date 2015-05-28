@@ -1,0 +1,47 @@
+html, body {
+	color: #000;
+	margin: 0;
+	padding: 0;
+	font-family: verdana, helvetica, arial, sans-serif;
+}
+#NAGLOWEK, #MENU ,  #INFORMACJE , #STOPKA{
+	display:none;
+}
+#TRESC {
+	display:inline-block;
+	text-align: left;
+	vertical-align: bottom;
+	background-color:transparent;
+	z-index:10;
+}
+h1 {
+	font-size: 26px;
+	color: rgba(255, 0, 0, 0.5);
+}
+smalltext {
+	font-size: 16px;
+	color: rgba(0, 0, 0, 0.5);
+}
+.image {
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  margin: auto; 
+  z-index:-1;
+}
+.iframe {
+  width: 99%;
+  height: 99%;
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  margin: auto; 
+  border:none;
+  z-index:-1;
+}

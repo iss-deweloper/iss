@@ -78,6 +78,10 @@ public class SlideshowServlet extends HttpServlet {
 
 			request.setAttribute(StringConstants.REQUEST_ATTR_CONTENTS,
 					contents);
+			if(null== screen.getFormat()|| "".equals(screen.getFormat())){
+				screen.setFormat("STANDARD");
+			}
+			request.setAttribute("screen",screen);
 			request.getRequestDispatcher(StringConstants.ISS_VIEW_PATH+"slideshow.jsp")
 					.forward(request, response);
 

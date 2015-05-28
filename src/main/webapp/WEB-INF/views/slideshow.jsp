@@ -9,9 +9,17 @@ Copyright (C) 2014,2015 Tomasz Bosak.
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="refresh" content="120">
+<c:if test="${screen.format == 'STANDARD'}">
 <link
 	href="<c:url value="${pageContext.request.contextPath}/Resources/css/main.css" />"
 	rel="stylesheet">
+</c:if>
+<c:if test="${screen.format == 'FULLSCREEN'}">
+<link
+	href="<c:url value="${pageContext.request.contextPath}/Resources/css/full_screen.css" />"
+	rel="stylesheet">
+</c:if>
+
 <script
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
 
@@ -51,24 +59,6 @@ Copyright (C) 2014,2015 Tomasz Bosak.
 				</c:forEach>
 			</div>
 		</article>
-		<!-- <footer id="STOPKA">
-	
-	<marquee scrollamount="4">
-	<?php
-		$array = $dataModel->getTextInformation();
-		foreach ($array as $value => $arr) {
-		  
-		  if($arr['warningFlag'] == true){
-			echo "<span class=\"error\">UWAGA:</span>&nbsp;";
-		  }
-		  echo $arr['text'];
-		  echo "&nbsp;<span class=\"separator\">|</span>&nbsp;";
-		}
-	?>
-	</marquee>
-	
-	</footer> 
-	-->
 	</div>
 </body>
 </html>
