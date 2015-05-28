@@ -27,7 +27,9 @@ Installation (local)
 1. Set the path for the local storage
   * open /admin page
 	* add setting with key: content.local.file.dir value: /local/storage
-
+1. Download ROOT.war 
+  * Unzip and edit persistence.xml file - update with your data
+  * deploy on Tomcat server
 
 Configuration parameters:
 -------------------------
