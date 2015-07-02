@@ -69,7 +69,7 @@ public class ScreensServlet extends HttpServlet {
 				s.setName(screenName);
 				System.out.println("DEBUG: Screen description: "+screenDescription);
 				s.setDescription(screenDescription);
-
+				s.setFormat("STANDARD");
 				if (dao.addScreen(s)) {
 					System.out.println("INFO: Screen created.");
 				}
