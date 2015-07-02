@@ -26,7 +26,11 @@ public class DBInitializer implements ServletRequestListener {
 	
 	@Override
 	public void requestDestroyed(ServletRequestEvent arg0) {
-
+		ServletRequest req = arg0.getServletRequest();
+		EntityManager em = (EntityManager) req.getAttribute(StringConstants.REQUEST_ATTR_ENTITY_MANAGER);
+		if(em!=null && em.isOpen()){
+			em.close();
+		}
 	}
 
 	@Override
@@ -44,18 +48,7 @@ public class DBInitializer implements ServletRequestListener {
 		req.setAttribute(StringConstants.REQUEST_ATTR_SCREEN_DAO, screenDAO);
 		req.setAttribute(StringConstants.REQUEST_ATTR_CONTENT_DAO, contentDAO);
 		req.setAttribute(StringConstants.REQUEST_ATTR_SETTING_DAO, settingDAO);
-
-		// TODO: move this into session (?) performance issues
-		if(req.getAttribute("registrationDisabled") == null && settingDAO != null){
-			GlobalSetting registrationDisabled = settingDAO.getGlobalSettingByKey(StringConstants.SETTING_REGISTRATION_DISABLED);
-			if (registrationDisabled != null){
-				
-				logger.log(Level.INFO, "Registration disabled: "+registrationDisabled.getValue());
-				if("TRUE".equals(registrationDisabled.getValue())){
-					req.setAttribute("registrationDisabled", "TRUE");
-				}
-			}
-		}
+		req.setAttribute(StringConstants.REQUEST_ATTR_ENTITY_MANAGER, em);
 
 	}
 	
