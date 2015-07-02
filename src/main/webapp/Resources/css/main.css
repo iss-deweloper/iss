@@ -98,7 +98,10 @@ marquee>.separator {
 	float: left;
 	font-weight: bold;
 }
-
+.week{
+	float: right;
+	font-weight: bold;
+}
 .date {
 	float: right;
 	font-weight: bold;
