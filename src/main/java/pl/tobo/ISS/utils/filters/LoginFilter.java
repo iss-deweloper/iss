@@ -4,6 +4,8 @@
 package pl.tobo.ISS.utils.filters;
 
 import java.io.IOException;
+import java.net.URI;
+import java.net.URLDecoder;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -34,7 +36,7 @@ public class LoginFilter implements Filter{
 			HttpServletRequest request = (HttpServletRequest) req;
 	        HttpServletResponse response = (HttpServletResponse) res;
 	        HttpSession session = request.getSession(false);
-	        String uri = request.getRequestURI();
+	        String uri = URLDecoder.decode(request.getRequestURI(), "UTF-8");
 
 	        boolean needsLogin = true;
 	        /** FIXED: 
@@ -58,7 +60,7 @@ public class LoginFilter implements Filter{
 	        if (needsLogin && (session == null || 
 	            	session.getAttribute(
 	        	    StringConstants.REQUEST_ATTR_LOGGED_USER) == null) ) {
-	        	System.out.println("User not logged for servlet uri: "+uri);
+	        	System.out.println("User not logged for servlet uri: "+uri+" with context: "+context);
 	        	request.getRequestDispatcher(StringConstants.ISS_VIEW_PATH+"login.jsp").forward(
 						request, response);
 	        } else {
