@@ -9,6 +9,7 @@ public class StringConstants {
 	public static final String REQUEST_ATTR_SCREEN_DAO = "screenDao";
 	public static final String REQUEST_ATTR_CONTENT_DAO = "contentDao";
 	public static final String REQUEST_ATTR_SETTING_DAO = "settingsDao";
+	public static final String REQUEST_ATTR_ENTITY_MANAGER = "entityManager";
 	
 	public static final String PERSISTENCE_UNIT = "ISS";
 
@@ -39,5 +40,6 @@ public class StringConstants {
 	public static final String SETTING_LDAP_ENABLED = "loging.LDAP.enabled";
 	public static final String SETTING_REGISTRATION_DISABLED = "global.registration.disabled";
 	public static final String SETTING_SAVE_FILE_PATH = "content.local.file.dir";
+
 	
 }
