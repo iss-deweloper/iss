@@ -22,7 +22,11 @@ function date_time(id)
         {
                 s = "0"+s;
         }
-        result = '<span class="time">'+h+':'+m+':'+s+'</span> <span class="date">'+days[day]+' '+d+' '+months[month]+' '+year+' r.</span>';
+          
+		onejan = new Date(date.getFullYear(), 0, 1);
+		w = Math.ceil( (((date - onejan) / 86400000) + onejan.getDay() + 1) / 7 );
+        
+		result = '<span class="time">&nbsp;'+h+':'+m+':'+s+'&nbsp;</span>  <span class="week">&nbsp;'+'W'+w+' &nbsp;</span> <span class="date">&nbsp;'+days[day]+' '+d+' '+months[month]+' '+year+' r.&nbsp;</span>';
         document.getElementById(id).innerHTML = result;
         setTimeout('date_time("'+id+'");','1000');
         return true;
