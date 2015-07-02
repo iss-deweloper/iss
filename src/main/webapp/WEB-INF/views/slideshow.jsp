@@ -11,12 +11,12 @@ Copyright (C) 2014,2015 Tomasz Bosak.
 <meta http-equiv="refresh" content="120">
 <c:if test="${screen.format == 'STANDARD'}">
 <link
-	href="<c:url value="${pageContext.request.contextPath}/Resources/css/main.css" />"
+	href="<c:url value="/Resources/css/main.css" />"
 	rel="stylesheet">
 </c:if>
 <c:if test="${screen.format == 'FULLSCREEN'}">
 <link
-	href="<c:url value="${pageContext.request.contextPath}/Resources/css/full_screen.css" />"
+	href="<c:url value="/Resources/css/full_screen.css" />"
 	rel="stylesheet">
 </c:if>
 
