@@ -4,6 +4,8 @@
 package pl.tobo.ISS.servlets;
 
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -24,7 +26,8 @@ import pl.tobo.ISS.utils.Utils;
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+	Logger logger = Logger.getLogger("pl.tobo.ISS");
+	
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -40,6 +43,19 @@ public class LoginServlet extends HttpServlet {
 //				}
 //			}
 //		}
+		// TODO: move this into session (?) performance issues
+				
+		SettingDao settings = (SettingDao) request.getAttribute(StringConstants.REQUEST_ATTR_SETTING_DAO);
+		if(request.getAttribute("registrationDisabled") == null && settings != null){
+					GlobalSetting registrationDisabled = settings.getGlobalSettingByKey(StringConstants.SETTING_REGISTRATION_DISABLED);
+					if (registrationDisabled != null){
+						
+						logger.log(Level.INFO, "Registration disabled: "+registrationDisabled.getValue());
+						if("TRUE".equals(registrationDisabled.getValue())){
+							request.setAttribute("registrationDisabled", "TRUE");
+						}
+					}
+				}
 		request.getRequestDispatcher(StringConstants.ISS_VIEW_PATH+"login.jsp").forward(request, response);
 	}
 
