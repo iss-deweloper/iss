@@ -33,17 +33,17 @@ Copyright (C) 2014,2015 Tomasz Bosak.
 			<div class="column_1_box">
 				<div class="column_3_third main_section">
 					<a href="content"> <img class="img"
-						src="/Resources/img/icons/publish.png"> <br />Publish
+						src="${pageContext.request.contextPath}/Resources/img/icons/publish.png"> <br />Publish
 					</a>
 				</div>
 				<div class="column_3_third main_section">
 					<a href="screens"> <img class="img"
-						src="/Resources/img/icons/screen_double.png"> <br />Screens
+						src="${pageContext.request.contextPath}/Resources/img/icons/screen_double.png"> <br />Screens
 					</a>
 				</div>
 				<div class="column_3_third main_section">
 					<a href="tags"> <img class="img"
-						src="/Resources/img/icons/tag_double.png"> <br />Tags
+						src="${pageContext.request.contextPath}/Resources/img/icons/tag_double.png"> <br />Tags
 					</a>
 				</div>
 			</div>

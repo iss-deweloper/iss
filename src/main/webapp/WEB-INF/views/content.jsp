@@ -33,13 +33,13 @@ Copyright (C) 2014,2015 Tomasz Bosak.
 			<div class="column_1_box">
 				<a class="button_link" href="addNewContent"> <img
 					class="menu_picture" alt=""
-					src="/Resources/img/icons/add_from_web.png"> Add from web
+					src="${pageContext.request.contextPath}/Resources/img/icons/add_from_web.png"> Add from web
 				</a> &nbsp; <a class="button_link" href="addNewLocalContent"> <img
 					class="menu_picture" alt=""
-					src="/Resources/img/icons/add_from_disc.png"> Add from disc
+					src="${pageContext.request.contextPath}/Resources/img/icons/add_from_disc.png"> Add from disc
 				</a>&nbsp; <a class="button_link" href="addNewIframe"> <img
 					class="menu_picture" alt=""
-					src="/Resources/img/icons/add_iframe.png"> Add iframe
+					src="${pageContext.request.contextPath}/Resources/img/icons/add_iframe.png"> Add iframe
 				</a>
 			</div>
 			<!-- END buttons to publish new content -->
@@ -97,9 +97,9 @@ Copyright (C) 2014,2015 Tomasz Bosak.
 						<c:forEach var="tag" items="${picture.tags}">
 							<div class="tagpicture">
 								<img alt="h"
-									src="/Resources/img/icons/tag_head_orange_small.png"><span
+									src="${pageContext.request.contextPath}/Resources/img/icons/tag_head_orange_small.png"><span
 									class="tag_body">${tag.name}</span><img alt="t"
-									src="/Resources/img/icons/tag_tail_small.png">
+									src="${pageContext.request.contextPath}/Resources/img/icons/tag_tail_small.png">
 							</div>
 						</c:forEach>
 					</div>
@@ -108,13 +108,13 @@ Copyright (C) 2014,2015 Tomasz Bosak.
 							<c:param name="id" value="${picture.id}"></c:param>
 						</c:url>
 						<a href="${url}"> <img class="menu_picture" alt=""
-							src="/Resources/img/icons/settings.png"> <br>Edit
+							src="${pageContext.request.contextPath}/Resources/img/icons/settings.png"> <br>Edit
 						</a><br>
 						<c:url var="url" scope="page" value="/deletePicture">
 							<c:param name="id" value="${picture.id}"></c:param>
 						</c:url>
 						<a href="${url}"> <img class="menu_picture" alt=""
-							src="/Resources/img/icons/trash.png"> <br>Delete
+							src="${pageContext.request.contextPath}/Resources/img/icons/trash.png"> <br>Delete
 						</a>
 					</div>
 				</div>

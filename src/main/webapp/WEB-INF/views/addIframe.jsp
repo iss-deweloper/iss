@@ -48,7 +48,7 @@ Copyright (C) 2014,2015 Tomasz Bosak.
 					<input type="text" class="tcal" name="validTo" />
 				</div>
 				<div class="column_3_third align_center align_middle">
-					<input type="image" src="/Resources/img/icons/add.png" /> <br />
+					<input type="image" src="${pageContext.request.contextPath}/Resources/img/icons/add.png" /> <br />
 					<br /> ADD NEW IFRAME
 				</div>
 			</form>

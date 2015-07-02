@@ -79,7 +79,7 @@ Copyright (C) 2014,2015 Tomasz Bosak.
 					type="text" name="key" maxlength="31" />
 				<p class="name">Value:</p>
 				<br /> <input type="text" name="value" maxlength="255" /> <input
-					type="image" src="/Resources/img/icons/add.png" />
+					type="image" src="${pageContext.request.contextPath}/Resources/img/icons/add.png" />
 			</form>
 		</div>
 	</div>
