@@ -1,7 +1,6 @@
 <!-- 
 Copyright (C) 2014,2015 Tomasz Bosak.
 -->
-<%@page import="com.sun.jndi.toolkit.url.Uri"%>
 <%@page import="pl.tobo.ISS.utils.StringConstants"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -33,13 +32,13 @@ Copyright (C) 2014,2015 Tomasz Bosak.
 			<div class="column_1_box">
 				<a class="button_link" href="addNewContent"> <img
 					class="menu_picture" alt=""
-					src="${pageContext.request.contextPath}/Resources/img/icons/add_from_web.png"> Add from web
+					src="<c:url value="/Resources/img/icons/add_from_web.png"/>"> Add from web
 				</a> &nbsp; <a class="button_link" href="addNewLocalContent"> <img
 					class="menu_picture" alt=""
-					src="${pageContext.request.contextPath}/Resources/img/icons/add_from_disc.png"> Add from disc
+					src="<c:url value="/Resources/img/icons/add_from_disc.png"/>"> Add from disc
 				</a>&nbsp; <a class="button_link" href="addNewIframe"> <img
 					class="menu_picture" alt=""
-					src="${pageContext.request.contextPath}/Resources/img/icons/add_iframe.png"> Add iframe
+					src="<c:url value="/Resources/img/icons/add_iframe.png"/>"> Add iframe
 				</a>
 			</div>
 			<!-- END buttons to publish new content -->
@@ -97,9 +96,9 @@ Copyright (C) 2014,2015 Tomasz Bosak.
 						<c:forEach var="tag" items="${picture.tags}">
 							<div class="tagpicture">
 								<img alt="h"
-									src="${pageContext.request.contextPath}/Resources/img/icons/tag_head_orange_small.png"><span
+									src="<c:url value="/Resources/img/icons/tag_head_orange_small.png"/>"><span
 									class="tag_body">${tag.name}</span><img alt="t"
-									src="${pageContext.request.contextPath}/Resources/img/icons/tag_tail_small.png">
+									src="<c:url value="/Resources/img/icons/tag_tail_small.png"/>">
 							</div>
 						</c:forEach>
 					</div>
@@ -108,13 +107,13 @@ Copyright (C) 2014,2015 Tomasz Bosak.
 							<c:param name="id" value="${picture.id}"></c:param>
 						</c:url>
 						<a href="${url}"> <img class="menu_picture" alt=""
-							src="${pageContext.request.contextPath}/Resources/img/icons/settings.png"> <br>Edit
+							src="<c:url value="/Resources/img/icons/settings.png"/>"> <br>Edit
 						</a><br>
 						<c:url var="url" scope="page" value="/deletePicture">
 							<c:param name="id" value="${picture.id}"></c:param>
 						</c:url>
 						<a href="${url}"> <img class="menu_picture" alt=""
-							src="${pageContext.request.contextPath}/Resources/img/icons/trash.png"> <br>Delete
+							src="<c:url value="/Resources/img/icons/trash.png"/>"> <br>Delete
 						</a>
 					</div>
 				</div>

@@ -1,7 +1,6 @@
 <!-- 
 Copyright (C) 2014,2015 Tomasz Bosak.
 -->
-<%@page import="com.sun.jndi.toolkit.url.Uri"%>
 <%@page import="pl.tobo.ISS.utils.StringConstants"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -35,7 +34,7 @@ Copyright (C) 2014,2015 Tomasz Bosak.
 				</c:url>
 				<div class="column_3_third">
 					<h1>Edit Screen</h1>
-					<img src="/Resources/img/icons/screen.png"><br>
+					<img src="<c:url value="/Resources/img/icons/screen.png"/>"><br>
 				</div>
 				<div class="column_3_third">
 					<p class="description">Screen name:</p>
@@ -46,9 +45,8 @@ Copyright (C) 2014,2015 Tomasz Bosak.
 					<p class="title"><%=request.getScheme()%>://<%=request.getServerName()%>:<%=request.getServerPort()%>${url_preview}</p>
 				</div>
 				<div class="column_3_third">
-
 					<a href="${url_preview}"><img
-						src="/Resources/img/icons/zoom.png" height="64px" width="64px"></a><br />
+						src="<c:url value="/Resources/img/icons/zoom.png"/>" height="64px" width="64px"></a><br />
 				</div>
 			</div>
 
@@ -62,9 +60,9 @@ Copyright (C) 2014,2015 Tomasz Bosak.
 									type="hidden" name="screenId" value="${screen.id}" />
 								<div class="tagpicture">
 									<input type="image"
-										src="/Resources/img/icons/tag_head_red_small.png" /><span
+										src="<c:url value="/Resources/img/icons/tag_head_red_small.png"/>" /><span
 										class="tag_body">${tag.name}</span><img
-										src="/Resources/img/icons/tag_tail_small.png">
+										src="<c:url value="/Resources/img/icons/tag_tail_small.png"/>">
 								</div>
 							</form>
 						</c:forEach>
@@ -79,9 +77,9 @@ Copyright (C) 2014,2015 Tomasz Bosak.
 									type="hidden" name="screenId" value="${screen.id}" />
 								<div class="tagpicture">
 									<input type="image"
-										src="/Resources/img/icons/tag_head_green_small.png" /><span
+										src="<c:url value="/Resources/img/icons/tag_head_green_small.png"/>" /><span
 										class="tag_body">${tag.name}</span><img
-										src="/Resources/img/icons/tag_tail_small.png">
+										src="<c:url value="/Resources/img/icons/tag_tail_small.png"/>">
 								</div>
 							</form>
 						</c:forEach>

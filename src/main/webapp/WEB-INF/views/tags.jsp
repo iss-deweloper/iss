@@ -1,7 +1,6 @@
 <!-- 
 Copyright (C) 2014,2015 Tomasz Bosak.
 -->
-<%@page import="com.sun.jndi.toolkit.url.Uri"%>
 <%@page import="pl.tobo.ISS.utils.StringConstants"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -39,7 +38,7 @@ Copyright (C) 2014,2015 Tomasz Bosak.
 						<input type="text" name="tagDescription" maxlength="255" />
 				</div>
 				<div class="column_3_half align_center align_middle">
-					<input type="image" src="/Resources/img/icons/add_newtag.png" /> <br />
+					<input type="image" src="<c:url value="/Resources/img/icons/add_newtag.png"/>"/> <br />
 					<br /> ADD NEW TAG
 					</form>
 				</div>
@@ -51,7 +50,7 @@ Copyright (C) 2014,2015 Tomasz Bosak.
 		<c:forEach var="tag" items="${tags}">
 			<div class="column_2_half_box">
 				<div class="column_3_half">
-					<img src="/Resources/img/icons/tag_double.png"><br>
+					<img src="<c:url value="/Resources/img/icons/tag_double.png"/>"><br>
 					<p class="description">Tag name:</p>
 					<p class="title">${tag.name}</p>
 					<p class="description">Tag description:</p>
@@ -60,7 +59,7 @@ Copyright (C) 2014,2015 Tomasz Bosak.
 						<c:param name="id" value="${tag.id}"></c:param>
 					</c:url>
 					<div class="column_3_half">
-						<a href="${url}"><img src="/Resources/img/icons/settings.png"
+						<a href="${url}"><img src="<c:url value="/Resources/img/icons/settings.png"/>"
 							height="64px" width="64px"><br />EDIT</a>
 					</div>
 				</div>
@@ -68,9 +67,9 @@ Copyright (C) 2014,2015 Tomasz Bosak.
 					<p class="name">Screens:</p>
 					<c:forEach var="screen" items="${tag.screens}">
 						<div class="tagpicture">
-							<img src="/Resources/img/icons/tag_head_screen_small.png"><span
+							<img src="<c:url value="/Resources/img/icons/tag_head_screen_small.png"/>"><span
 								class="tag_body">${screen.name}</span><img
-								src="/Resources/img/icons/tag_tail_small.png">
+								src="<c:url value="/Resources/img/icons/tag_tail_small.png"/>">
 						</div>
 					</c:forEach>
 				</div>

@@ -2,7 +2,6 @@
 Copyright (C) 2014,2015 Tomasz Bosak.
 -->
 <%@page import="pl.tobo.ISS.entities.Content"%>
-<%@page import="com.sun.jndi.toolkit.url.Uri"%>
 <%@page import="pl.tobo.ISS.utils.StringConstants"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -63,6 +62,8 @@ Copyright (C) 2014,2015 Tomasz Bosak.
 				<div class="contentbox column_3_quarter">
 					<p class="description">Title:</p>
 					<p class="title">${content.title }</p>
+					<p class="description">Address:</p>
+					<p class="author">${content.contentAddress}</p>
 					<p class="description">Valid from:</p>
 					<p class="date ${valid}">
 						<fmt:formatDate value="${content.validFrom}"
@@ -77,7 +78,7 @@ Copyright (C) 2014,2015 Tomasz Bosak.
 					<p class="author">${content.user.login}<br> <a
 							href="deletePicture?id=${content.id}"> <img
 							class="menu_picture" alt="delect_content"
-							src="/Resources/img/icons/trash.png" style="float: right;"><br>
+							src="<c:url value="/Resources/img/icons/trash.png"/>" style="float: right;"><br>
 						</a>
 				</div>
 			</div>
@@ -89,10 +90,10 @@ Copyright (C) 2014,2015 Tomasz Bosak.
 							<input name="tagId" type="hidden" value="${tag.id}" /> <input
 								name="contentId" type="hidden" value="${content.id}" />
 							<div class="tagpicture">
-								<input src="/Resources/img/icons/tag_head_red_small.png"
+								<input src="<c:url value="/Resources/img/icons/tag_head_red_small.png"/>"
 									title="${tag.description}" type="image"><span
 									class="tag_body">${tag.name}</span><img
-									src="/Resources/img/icons/tag_tail_small.png">
+									src="<c:url value="/Resources/img/icons/tag_tail_small.png"/>">
 							</div>
 						</form>
 					</c:forEach>
@@ -104,10 +105,10 @@ Copyright (C) 2014,2015 Tomasz Bosak.
 							<input name="tagId" type="hidden" value="${tag.id}" /> <input
 								name="contentId" type="hidden" value="${content.id}" />
 							<div class="tagpicture">
-								<input src="/Resources/img/icons/tag_head_green_small.png"
+								<input src="<c:url value="/Resources/img/icons/tag_head_green_small.png"/>"
 									title="${tag.description}" type="image"><span
 									class="tag_body">${tag.name}</span><img
-									src="/Resources/img/icons/tag_tail_small.png">
+									src="<c:url value="/Resources/img/icons/tag_tail_small.png"/>">
 							</div>
 						</form>
 					</c:forEach>

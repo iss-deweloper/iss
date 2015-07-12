@@ -1,7 +1,6 @@
 <!-- 
 Copyright (C) 2014,2015 Tomasz Bosak.
 -->
-<%@page import="com.sun.jndi.toolkit.url.Uri"%>
 <%@page import="pl.tobo.ISS.utils.StringConstants"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -25,7 +24,7 @@ Copyright (C) 2014,2015 Tomasz Bosak.
 <title>Screens</title>
 </head>
 <body>
-	<jsp:include page="header.jsp" />
+	<jsp:include page="header.jsp"/>
 
 	<div class="column_1">
 		<div class="column_2_center">
@@ -39,7 +38,7 @@ Copyright (C) 2014,2015 Tomasz Bosak.
 						<input type="text" name="screenDescription" maxlength="255" />
 				</div>
 				<div class="column_3_half align_center align_middle">
-					<input type="image" src="/Resources/img/icons/screen_green.png" />
+					<input type="image" src="<c:url value="/Resources/img/icons/screen_green.png"/>" />
 					<br /> <br /> ADD NEW SCREEN
 					</form>
 				</div>
@@ -52,7 +51,7 @@ Copyright (C) 2014,2015 Tomasz Bosak.
 		<c:forEach var="screen" items="${screens}">
 			<div class="column_2_half_box">
 				<div class="column_3_half">
-					<img src="/Resources/img/icons/screen.png"><br>
+					<img src="<c:url value="/Resources/img/icons/screen.png"/>"><br>
 					<p class="description">Screen name:</p>
 					<p class="title">${screen.name}</p>
 					<p class="description">Screen description:</p>
@@ -61,7 +60,7 @@ Copyright (C) 2014,2015 Tomasz Bosak.
 						<c:param name="id" value="${screen.id}"></c:param>
 					</c:url>
 					<div class="column_3_half">
-						<a href="${url}"><img src="/Resources/img/icons/settings.png"
+						<a href="${url}"><img src="<c:url value="/Resources/img/icons/settings.png"/>"
 							height="64px" width="64px"><br />EDIT</a>
 					</div>
 					<c:url var="url_preview" scope="page" value="/slideshow">
@@ -69,16 +68,16 @@ Copyright (C) 2014,2015 Tomasz Bosak.
 					</c:url>
 					<div class="column_3_half">
 						<a href="${url_preview}"><img
-							src="/Resources/img/icons/zoom.png" height="64px" width="64px"><br />VIEW</a>
+							src="<c:url value="/Resources/img/icons/zoom.png"/>" height="64px" width="64px"><br />VIEW</a>
 					</div>
 				</div>
 				<div class="column_3_half tagbox">
 					<p class="name">Tags:</p>
 					<c:forEach var="tag" items="${screen.tags}">
 						<div class="tagpicture">
-							<img src="/Resources/img/icons/tag_head_orange_small.png"><span
+							<img src="<c:url value="/Resources/img/icons/tag_head_orange_small.png"/>"><span
 								class="tag_body">${tag.name}</span><img
-								src="/Resources/img/icons/tag_tail_small.png">
+								src="<c:url value="/Resources/img/icons/tag_tail_small.png"/>">
 						</div>
 					</c:forEach>
 				</div>

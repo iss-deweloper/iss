@@ -24,9 +24,9 @@ Copyright (C) 2014,2015 Tomasz Bosak.
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
 
 <script
-	src="${pageContext.request.contextPath}/Resources/js/change_slides.js"></script>
+	src="<c:url value="/Resources/js/change_slides.js"/>"></script>
 <script
-	src="${pageContext.request.contextPath}/Resources/js/date_time.js"></script>
+	src="<c:url value="/Resources/js/date_time.js"/>"></script>
 
 <title>ISS Slideshow</title>
 </head>

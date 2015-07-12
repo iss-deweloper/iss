@@ -1,7 +1,6 @@
 <!-- 
 Copyright (C) 2014,2015 Tomasz Bosak.
 -->
-<%@page import="com.sun.jndi.toolkit.url.Uri"%>
 <%@page import="pl.tobo.ISS.utils.StringConstants"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -25,7 +24,7 @@ Copyright (C) 2014,2015 Tomasz Bosak.
 <link href="<c:url value="/Resources/js/calendar/tcal.css" />"
 	rel="stylesheet">
 <script
-	src="${pageContext.request.contextPath}/Resources/js/calendar/tcal.js"></script>
+	src="<c:url value="/Resources/js/calendar/tcal.js"/>"></script>
 
 <title>Add Content</title>
 </head>
@@ -48,7 +47,7 @@ Copyright (C) 2014,2015 Tomasz Bosak.
 					<input type="text" class="tcal" name="validTo" />
 				</div>
 				<div class="column_3_third align_center align_middle">
-					<input type="image" src="${pageContext.request.contextPath}/Resources/img/icons/add.png" /> <br />
+					<input type="image" src="<c:url value="/Resources/img/icons/add.png"/>" /> <br />
 					<br /> ADD NEW IFRAME
 				</div>
 			</form>

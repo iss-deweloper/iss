@@ -2,7 +2,6 @@
 Copyright (C) 2014,2015 Tomasz Bosak.
 -->
 <%@page import="pl.tobo.ISS.utils.StringConstants"%>
-<%@page import="com.sun.jndi.toolkit.url.Uri"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -33,17 +32,17 @@ Copyright (C) 2014,2015 Tomasz Bosak.
 			<div class="column_1_box">
 				<div class="column_3_third main_section">
 					<a href="content"> <img class="img"
-						src="${pageContext.request.contextPath}/Resources/img/icons/publish.png"> <br />Publish
+						src="<c:url value="/Resources/img/icons/publish.png"/>"> <br />Publish
 					</a>
 				</div>
 				<div class="column_3_third main_section">
 					<a href="screens"> <img class="img"
-						src="${pageContext.request.contextPath}/Resources/img/icons/screen_double.png"> <br />Screens
+						src="<c:url value="/Resources/img/icons/screen_double.png"/>"> <br />Screens
 					</a>
 				</div>
 				<div class="column_3_third main_section">
 					<a href="tags"> <img class="img"
-						src="${pageContext.request.contextPath}/Resources/img/icons/tag_double.png"> <br />Tags
+						src="<c:url value="/Resources/img/icons/tag_double.png"/>"> <br />Tags
 					</a>
 				</div>
 			</div>

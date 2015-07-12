@@ -1,7 +1,6 @@
 <!-- 
 Copyright (C) 2014,2015 Tomasz Bosak.
 -->
-<%@page import="com.sun.jndi.toolkit.url.Uri"%>
 <%@page import="pl.tobo.ISS.utils.StringConstants"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -32,7 +31,7 @@ Copyright (C) 2014,2015 Tomasz Bosak.
 			<div class="column_1_box">
 				<div class="column_3_third">
 					<h1>Edit Tag</h1>
-					<img src="/Resources/img/icons/tag_double.png"><br>
+					<img src="<c:url value="/Resources/img/icons/tag_double.png"/>"><br>
 				</div>
 				<div class="column_3_third">
 					<p class="description">Tag name:</p>
@@ -51,9 +50,9 @@ Copyright (C) 2014,2015 Tomasz Bosak.
 								<input type="hidden" name="screenId" value="${screen.id}" /> <input
 									type="hidden" name="tagId" value="${tag.id}" />
 								<div class="tagpicture">
-									<img src="/Resources/img/icons/tag_head_screen_small.png" /><span
+									<img src="<c:url value="/Resources/img/icons/tag_head_screen_small.png"/>" /><span
 										class="tag_body">${screen.name}</span><input type="image"
-										src="/Resources/img/icons/tag_tail_red_small.png">
+										src="<c:url value="/Resources/img/icons/tag_tail_red_small.png"/>">
 								</div>
 							</form>
 						</c:forEach>
@@ -67,9 +66,9 @@ Copyright (C) 2014,2015 Tomasz Bosak.
 								<input type="hidden" name="tagId" value="${tag.id}" /> <input
 									type="hidden" name="screenId" value="${screen.id}" />
 								<div class="tagpicture">
-									<img src="/Resources/img/icons/tag_head_screen_small.png" /><span
+									<img src="<c:url value="/Resources/img/icons/tag_head_screen_small.png"/>" /><span
 										class="tag_body">${screen.name}</span><input type="image"
-										src="/Resources/img/icons/tag_tail_green_small.png">
+										src="<c:url value="/Resources/img/icons/tag_tail_green_small.png"/>">
 								</div>
 							</form>
 						</c:forEach>
