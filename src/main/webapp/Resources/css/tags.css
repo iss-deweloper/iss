@@ -16,7 +16,7 @@ form {
 }
 
 .tag_body {
-	background-image: url('/Resources/img/icons/tag_body_small.png');
+	background-image: url('../img/icons/tag_body_small.png');
 	background-position: left center;
 	background-origin: content-box;
 	display: inline-block;
