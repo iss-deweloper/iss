@@ -1,6 +1,7 @@
 /target/
 .gitignore
 persistence.xml
+.settings/
 *.class
 
 *.class
