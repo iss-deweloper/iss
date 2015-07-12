@@ -3,7 +3,6 @@
 **/
 package pl.tobo.ISS.utils;
 
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.persistence.EntityManager;
@@ -17,7 +16,6 @@ import pl.tobo.ISS.dao.ScreenDao;
 import pl.tobo.ISS.dao.SettingDao;
 import pl.tobo.ISS.dao.TagDao;
 import pl.tobo.ISS.dao.UserDao;
-import pl.tobo.ISS.entities.GlobalSetting;
 
 @WebListener
 public class DBInitializer implements ServletRequestListener {

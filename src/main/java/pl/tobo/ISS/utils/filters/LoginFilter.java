@@ -4,7 +4,6 @@
 package pl.tobo.ISS.utils.filters;
 
 import java.io.IOException;
-import java.net.URI;
 import java.net.URLDecoder;
 
 import javax.servlet.Filter;
