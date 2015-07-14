@@ -113,8 +113,13 @@ public class Content {
 	public void setTags(Set<Tag> tags) {
 		this.tags = tags;
 	}
-    
-    
-    
-	
+
+
+	@Override
+	public String toString() {
+		return "Content [id=" + id + ", user=" + user + ", contentAddress="
+				+ contentAddress + ", validFrom=" + validFrom + ", validTo="
+				+ validTo + ", title=" + title + ", contentType=" + contentType
+				+ ", #tags=" + tags.size() + "]";
+	}
 }

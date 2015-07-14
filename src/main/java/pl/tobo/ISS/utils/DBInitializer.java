@@ -20,7 +20,7 @@ import pl.tobo.ISS.dao.UserDao;
 @WebListener
 public class DBInitializer implements ServletRequestListener {
 	
-	Logger logger = Logger.getLogger("pl.tobo.ISS");
+	private static Logger logger = Logger.getLogger("pl.tobo.ISS");
 	
 	@Override
 	public void requestDestroyed(ServletRequestEvent arg0) {

@@ -26,7 +26,7 @@ import pl.tobo.ISS.utils.Utils;
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	Logger logger = Logger.getLogger("pl.tobo.ISS");
+	private static Logger logger = Logger.getLogger("pl.tobo.ISS");
 	
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)

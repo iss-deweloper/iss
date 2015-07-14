@@ -87,5 +87,11 @@ public class Screen {
 		this.format = format;
 	}
 
+	@Override
+	public String toString() {
+		return "Screen [id=" + id + ", name=" + name + ", description="
+				+ description + ", #tags=" + tags.size() + ", format=" + format + "]";
+	}
+	
 
 }

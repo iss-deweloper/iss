@@ -25,7 +25,7 @@ import pl.tobo.ISS.utils.StringConstants;
 @WebServlet("/register")
 public class RegisterServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	Logger logger = Logger.getLogger("pl.tobo.ISS");
+	private static Logger logger = Logger.getLogger("pl.tobo.ISS");
 	
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
