@@ -53,8 +53,9 @@ public class AddTagToContentServlet extends HttpServlet {
 		Content content = cDao.getById(contentId);
 		
 		tag.getContents().add(content);
+		boolean success = cDao.addTagForContent(contentId, tag);
 		
-		System.out.println("INFO: Update success: "+cDao.addTagForContent(contentId, tag));
+		System.out.println("INFO: Update success: "+success);
 		
 		doGet(request, response);
 		

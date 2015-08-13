@@ -4,6 +4,7 @@
 package pl.tobo.ISS.entities;
 
 import java.sql.Timestamp;
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -107,6 +108,9 @@ public class Content {
 	}
 
 	public Set<Tag> getTags() {
+		if (tags==null){
+			tags=new HashSet<Tag>();
+		}
 		return tags;
 	}
 

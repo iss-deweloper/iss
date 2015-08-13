@@ -65,6 +65,7 @@ public class ContentDao {
 		try {
 			et.begin();
 			Content content = em.find(Content.class, contentId);
+
 			if(!content.getTags().contains(t)){
 				content.getTags().add(t);
 			}

@@ -3,6 +3,7 @@
 **/
 package pl.tobo.ISS.entities;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -32,12 +33,18 @@ public class Tag {
 	private Set<Screen> screens;
 	
 	public Set<Content> getContents() {
+		if(contents==null){
+			contents = new HashSet<Content>();
+		}
 		return contents;
 	}
 	public void setContents(Set<Content> contents) {
 		this.contents = contents;
 	}
 	public Set<Screen> getScreens() {
+		if(screens==null){
+			screens = new HashSet<Screen>();
+		}
 		return screens;
 	}
 	public void setScreens(Set<Screen> screens) {
