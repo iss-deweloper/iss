@@ -71,9 +71,27 @@ public class Tag {
 
 	@Override
 	public String toString() {
-		return "Tag [id=" + id + ", name=" + name + ", description="
-				+ description + ", #contents=" + contents.size() + ", #screens="
-				+ screens.size() + "]";
+			
+		StringBuilder description = new StringBuilder();
+		description.append("Tag [");
+		description.append("id= " + id+", ");
+		description.append("name= " + name + ", ");
+		description.append("description= " + description + ", ");
+		
+		if(contents!=null){
+			description.append("#contents= " + contents.size()+ ", ");
+		}else{
+			description.append("no contents yet, ");
+		}
+		
+		if(screens!=null){
+			description.append("#screens= " + screens.size());
+		}else{
+			description.append("no screens yet");
+		}
+		
+		description.append("]");
+		return description.toString();
 	}
 	
 	

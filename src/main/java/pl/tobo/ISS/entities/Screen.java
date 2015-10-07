@@ -3,7 +3,9 @@
 **/
 package pl.tobo.ISS.entities;
 
+import java.util.HashSet;
 import java.util.Set;
+import java.util.logging.Logger;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -19,6 +21,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="Screen")
 public class Screen {
+	private static Logger logger = Logger.getLogger("pl.tobo.ISS");  
 
 	@Id
 	@GeneratedValue
@@ -66,6 +69,11 @@ public class Screen {
 	}
 
 	public Set<Tag> getTags() {
+		if(tags == null){
+			logger.severe("ceating new tag HashSet in content "+ id+
+					"this should not happen!");
+			tags = new HashSet<Tag>();
+		}
 		return tags;
 	}
 
@@ -89,9 +97,23 @@ public class Screen {
 
 	@Override
 	public String toString() {
-		return "Screen [id=" + id + ", name=" + name + ", description="
-				+ description + ", #tags=" + tags.size() + ", format=" + format + "]";
-	}
+		
+		StringBuilder description = new StringBuilder();
+		description.append("Screen [");
+		description.append("id= " + id+", ");
+		description.append("name= " + name + ", ");
+		description.append("description= " + description + ", ");
+		description.append("format= " + format + ", ");
+		
+	
+		if(tags!=null){
+			description.append("#tags= " + tags.size());
+		}else{
+			description.append("no tags yet");
+		}
+		description.append("]");
+		return description.toString();
+		}
 	
 
 }

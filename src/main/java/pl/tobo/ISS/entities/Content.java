@@ -121,9 +121,21 @@ public class Content {
 
 	@Override
 	public String toString() {
-		return "Content [id=" + id + ", user=" + user + ", contentAddress="
-				+ contentAddress + ", validFrom=" + validFrom + ", validTo="
-				+ validTo + ", title=" + title + ", contentType=" + contentType
-				+ ", #tags=" + tags.size() + "]";
+		StringBuilder description = new StringBuilder();
+		description.append("Content [");
+		description.append("id= " + id+", ");
+		description.append("user= " + user + ", ");
+		description.append("contentAddress= " + contentAddress + ", ");
+		description.append("validFrom= " + validFrom + ", ");
+		description.append("validTo= " + validTo + ", ");
+		description.append("title= " + title + ", ");
+		description.append("contentType= " + contentType + ", ");
+		if(tags!=null){
+			description.append("#tags= " + tags.size());
+		}else{
+			description.append("no tags yet");
+		}
+		description.append("]");
+		return description.toString();
 	}
 }
