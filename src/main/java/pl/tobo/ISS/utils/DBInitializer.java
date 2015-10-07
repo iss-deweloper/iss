@@ -24,15 +24,28 @@ public class DBInitializer implements ServletRequestListener {
 	
 	@Override
 	public void requestDestroyed(ServletRequestEvent arg0) {
+		logger.entering("DBInitializer","requestDestroyed");
 		ServletRequest req = arg0.getServletRequest();
+		
+		req.removeAttribute(StringConstants.REQUEST_ATTR_USER_DAO);
+		req.removeAttribute(StringConstants.REQUEST_ATTR_TAG_DAO);
+		req.removeAttribute(StringConstants.REQUEST_ATTR_SCREEN_DAO );
+		req.removeAttribute(StringConstants.REQUEST_ATTR_CONTENT_DAO );
+		req.removeAttribute(StringConstants.REQUEST_ATTR_SETTING_DAO );
+		req.removeAttribute(StringConstants.REQUEST_ATTR_ENTITY_MANAGER);
+
 		EntityManager em = (EntityManager) req.getAttribute(StringConstants.REQUEST_ATTR_ENTITY_MANAGER);
 		if(em!=null && em.isOpen()){
 			em.close();
 		}
+		req.removeAttribute(StringConstants.REQUEST_ATTR_ENTITY_MANAGER);
+		
+		logger.exiting("DBInitializer","requestDestroyed");
 	}
 
 	@Override
 	public void requestInitialized(ServletRequestEvent arg0) {
+		logger.entering("DBInitializer","requestInitialized");
 		EntityManager em = DBConfig.getEntityManager();
 		UserDao userDAO = new UserDao(em);
 		TagDao tagDAO = new TagDao(em);
@@ -47,7 +60,8 @@ public class DBInitializer implements ServletRequestListener {
 		req.setAttribute(StringConstants.REQUEST_ATTR_CONTENT_DAO, contentDAO);
 		req.setAttribute(StringConstants.REQUEST_ATTR_SETTING_DAO, settingDAO);
 		req.setAttribute(StringConstants.REQUEST_ATTR_ENTITY_MANAGER, em);
-
+		logger.exiting("DBInitializer","requestInitialized");
 	}
+	
 	
 }

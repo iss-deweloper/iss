@@ -5,6 +5,7 @@ package pl.tobo.ISS.utils.filters;
 
 import java.io.IOException;
 import java.net.URLDecoder;
+import java.util.logging.Logger;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -21,7 +22,7 @@ import pl.tobo.ISS.utils.StringConstants;
 
 @WebFilter("/*")
 public class LoginFilter implements Filter{
-
+	private static Logger logger = Logger.getLogger("pl.tobo.ISS");
 	@Override
 	public void destroy() {
 		
@@ -30,12 +31,13 @@ public class LoginFilter implements Filter{
 	@Override
 	public void doFilter(ServletRequest req, ServletResponse res,
 			FilterChain chain) throws IOException, ServletException {
-			
-		
+			logger.entering("LoginFilter","doFilter");
 			HttpServletRequest request = (HttpServletRequest) req;
 	        HttpServletResponse response = (HttpServletResponse) res;
 	        HttpSession session = request.getSession(false);
+
 	        String uri = URLDecoder.decode(request.getRequestURI(), "UTF-8");
+	        logger.finer("Request uri: "+ uri);
 
 	        boolean needsLogin = true;
 	        /** FIXED: 
@@ -43,7 +45,7 @@ public class LoginFilter implements Filter{
 	              see: http://tobo.zz.mu/view.php?id=9
 	        **/
 	        String context = request.getContextPath();
-	        
+	        logger.finer("Request context: "+ context);
 	        /**      
 	         Allows /static content be visible for not logged users:
 	              https://github.com/iss-deweloper/iss/issues/15
@@ -59,17 +61,19 @@ public class LoginFilter implements Filter{
 	        if (needsLogin && (session == null || 
 	            	session.getAttribute(
 	        	    StringConstants.REQUEST_ATTR_LOGGED_USER) == null) ) {
-	        	System.out.println("User not logged for servlet uri: "+uri+" with context: "+context);
+	        	logger.info("User not logged for servlet uri: "+uri+" with context: "+context);
 	        	request.getRequestDispatcher(StringConstants.ISS_VIEW_PATH+"login.jsp").forward(
 						request, response);
 	        } else {
 	            chain.doFilter(req, res); // Logged-in user found, so just continue request.
 	        }
+	        logger.exiting("LoginFilter","doFilter");
 	}
 
 	@Override
 	public void init(FilterConfig arg0) throws ServletException {
-		
+		 logger.entering("LoginFilter","init");
+		 logger.exiting("LoginFilter","init");
 	}
 
 }
