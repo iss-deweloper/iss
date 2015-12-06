@@ -54,11 +54,6 @@ a {
 .button_link {
 	border: 3px solid black;
 	border-radius: 15px;
-	-webkit-border-image: url('/Resources/img/icons/border.png') 16 16 round;
-	/* Safari 3.1-5 */
-	-o-border-image: url('/Resources/img/icons/border.png') 16 16 round;
-	/* Opera 11-12.1 */
-	border-image: url('/Resources/img/icons/border.png') 16 16 round;
 	display: inline-block;
 	max-width: 50%;
 	font-family: verdana, helvetica, arial, sans-serif;

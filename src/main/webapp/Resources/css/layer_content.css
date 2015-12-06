@@ -7,11 +7,7 @@
 	border: 3px solid black;
 	border-radius: 15px;
 	margin-bottom: 10px;
-	-webkit-border-image: url('/Resources/img/icons/border.png') 16 16 round;
-	/* Safari 3.1-5 */
-	-o-border-image: url('/Resources/img/icons/border.png') 16 16 round;
-	/* Opera 11-12.1 */
-	border-image: url('/Resources/img/icons/border.png') 16 16 round;
+
 	padding: 25px;
 }
 
@@ -20,11 +16,6 @@
 	border: 3px solid black;
 	border-radius: 15px;
 	margin-bottom: 10px;
-	-webkit-border-image: url('/Resources/img/icons/border.png') 16 16 round;
-	/* Safari 3.1-5 */
-	-o-border-image: url('/Resources/img/icons/border.png') 16 16 round;
-	/* Opera 11-12.1 */
-	border-image: url('/Resources/img/icons/border.png') 16 16 round;
 	display: inline-block;
 	padding: 25px;
 }
