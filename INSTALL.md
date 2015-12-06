@@ -23,6 +23,7 @@ Installation (local)
   * Update server.xml file (in /etc/tomcat7/)
 	* In Host section add:
 	
+  > &lt;!-- Static path to store ISS local pictures--&gt;<br/>
   > &lt;Context  path="/" aliases="/static=/local/storage/"/&gt;
 1. Set the path for the local storage
   * open /admin page
