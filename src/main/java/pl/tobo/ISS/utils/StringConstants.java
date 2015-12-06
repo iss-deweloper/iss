@@ -4,6 +4,9 @@
 package pl.tobo.ISS.utils;
 
 public class StringConstants {
+	
+	public static final String ISS_VERSION = "iss ver: 1.1";
+	
 	public static final String REQUEST_ATTR_USER_DAO = "userDao";
 	public static final String REQUEST_ATTR_TAG_DAO = "tagDao";
 	public static final String REQUEST_ATTR_SCREEN_DAO = "screenDao";

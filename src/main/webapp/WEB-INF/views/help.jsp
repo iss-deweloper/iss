@@ -30,11 +30,14 @@ Copyright (C) 2014,2015 Tomasz Bosak.
 
 	<div class="column_1">
 		<div class="column_2_center">
+			<div class="column_2_half_box">
 			Welcome on ISS Help page.<br /> ISS is an Open Source application
 			licensed under MIT license.<br /> You can find source code here: <a
 				href="https://github.com/iss-deweloper/iss">github</a><br /> All
 			comments, issues, bugs and improvements please add <a
-				href="https://github.com/iss-deweloper/iss/issues">here</a>
+				href="https://github.com/iss-deweloper/iss/issues">here</a><br/>	
+				In case of reporting problems - please specify version of ISS: <%=StringConstants.ISS_VERSION%>
+			</div>
 		</div>
 	</div>
 
