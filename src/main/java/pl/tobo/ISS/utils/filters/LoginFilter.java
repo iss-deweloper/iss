@@ -44,7 +44,7 @@ public class LoginFilter implements Filter{
 	         Related to the application path
 	              see: http://tobo.zz.mu/view.php?id=9
 	        **/
-	        String context = request.getContextPath();
+	        String context = URLDecoder.decode(request.getContextPath(), "UTF-8");
 	        logger.finer("Request context: "+ context);
 	        /**      
 	         Allows /static content be visible for not logged users:
