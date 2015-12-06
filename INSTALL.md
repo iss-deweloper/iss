@@ -12,6 +12,9 @@ Installation (local)
   >	mysql> create database iss;<br/>
   >	mysql> create user iss;<br/>
   >	mysql> grant all on iss.* to 'iss'@'localhost' identified by 'iss123';
+  * create tables:
+  
+  >     mysql -uiss iss < iss.sql
 1. Deploy ROOT.war on tomcat
   * previously undeploy the ./ application
 1. Create folder /local/storage for the pictures
